@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<head> <meta charset="utf-8" />
+    <link href="CSS/brw.css" rel="stylesheet">
+    <script src="JS/jquery1124.js"></script>
+    <script src="JS/jquery.ui.widget.min.js"></script>
+    <script src="JS/brw.ugf.js"></script>
+    <title>Tabelul tuturor mutărilor pieselor</title>
+</head>
+<body style="margin-left:2em">
+    <p>vezi Consola browser-ului (press F12)</p>
+<textarea id="tPGN">[FEN "R6R/3Q4/1Q4Q1/4Q3/2Q4Q/Q4Q2/pp1Q4/kBNN1KB1 w "]</textarea>
+
+<script>
+    $(function() {  // instanţiază widget-ul şi invocă metode publice
+        $('#tPGN').pgnbrw({fld_sz:24, Game:false}).pgnbrw('perft');  // numărul de mutări legale
+                        // .pgnbrw('perft', '8/2R5/3N4/6R1/3BBN2/1Q6/3K3k/8 w ');
+                        
+                        // generează tabelele predefinite (mutările pieselor, de pe oricare câmp)
+                                // .pgnbrw('allMovesTable');
+                  
+    });
+</script>
+</body>
+

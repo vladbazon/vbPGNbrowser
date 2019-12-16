@@ -1,0 +1,224 @@
+.Col1, .revMB .Col8 {left:0%}     .Row8, .revMB .Row1 {top:0%}
+.Col2, .revMB .Col7 {left:12.5%}  .Row7, .revMB .Row2 {top:12.5%}
+.Col3, .revMB .Col6 {left:25%}    .Row6, .revMB .Row3 {top:25%}
+.Col4, .revMB .Col5 {left:37.5%}  .Row5, .revMB .Row4 {top:37.5%}
+.Col5, .revMB .Col4 {left:50%}    .Row4, .revMB .Row5 {top:50%}
+.Col6, .revMB .Col3 {left:62.5%}  .Row3, .revMB .Row6 {top:62.5%}
+.Col7, .revMB .Col2 {left:75%}    .Row2, .revMB .Row7 {top:75%}
+.Col8, .revMB .Col1 {left:87.5%}  .Row1, .revMB .Row8 {top:87.5%}
+
+.wh-pawn   {background-position:0%}      
+.wh-king   {background-position:-100%}
+.wh-queen  {background-position:-200%}
+.wh-rook   {background-position:-300%}
+.wh-bishop {background-position:-400%}
+.wh-knight {background-position:-500%}
+.bl-knight {background-position:-600%}
+.bl-bishop {background-position:-700%}
+.bl-rook   {background-position:-800%}
+.bl-queen  {background-position:-900%}
+.bl-king   {background-position:-1000%}
+.bl-pawn   {background-position:100%}
+
+.tagRow, .tagCol {  /* pe fiecare din cele 16 DIV-etichete */
+    position: absolute;  /* faţă de div.Board */
+    color: #98a;
+    font-family: monospace;
+} 
+.tagRow {    /* pentru fiecare DIV de pe verticală */
+    left: -6%;     /* stânga faţă de div.Board */
+    height: 12.5%; /* egal cu pasul top-ului din .RowN */
+    font-size: 0.9em;
+}   
+.tagCol {         /* pentru fiecare DIV de pe orizontală */
+    top: 102%;          /* jos faţă de div.Board */
+    width: 12.5%;       /* pasul left-ului din .ColN */
+    text-align:center;  /* centrează orizontal eticheta */
+    font-size: 0.95em;
+} 
+
+/* .whFld { background: white; }   .blFld { background: lightgrey; } */
+.FldColor1 .whFld { background: #f8f0ff}
+.FldColor1 .blFld { background: #D3D3D3}
+.FldColor2 .whFld { background: #f2d798; /*#e5e1c6;*/ /*#ffebc7;*/ }
+.FldColor2 .blFld { background: #c9ad6f; /*#cccbac;*/ /*#e6cc95;*/ }
+.FldColor3 .whFld { background: #e5e1c6; /*#f8f0ff;*/ }
+.FldColor3 .blFld { background: #cccbac; /*#f8f0ff url("images/hash5.gif") 50% 50%;*/ }
+
+.Bkg { position: absolute; left: -10%; top: 101%; width:0.9em; height:2.8em; cursor:pointer;}
+.Bkg .Bkg1 {height:0.9em; margin-bottom:1px; background: #D3D3D3;}
+.Bkg .Bkg2 {height:0.9em; margin-bottom:1px; background: #e6cc95;}
+.Bkg .Bkg3 {height:0.9em; background: #cccbac; }
+
+    .GameNav {
+        margin-top:1.2em;
+        display: grid;
+        grid-template-columns: 2fr repeat(4,1fr) 2fr;
+        grid-column-gap: 0.5em;
+        justify-items: center;
+        font-size: 1.2em;
+    }
+    .GameNav > div {
+        cursor:pointer;
+        background: #eee;
+        padding-left:2px;padding-right:2px;
+    }
+
+.GameInfo { font-size: 0.9em; text-align: left; }
+.GameInfo p {margin-bottom:0.25em}
+
+.mGrid {
+    display: grid;
+    grid-template-columns: repeat(3, min-content);
+    grid-column-gap: 1.5em;
+}
+.Grid1 {  /* Man* */
+    grid-column: 1;
+}
+.Grid2 {  /* lista mutărilor */
+    grid-column: 2;
+    width: 10em;  /* height: funcţie de height(div.Grid1) */
+    line-height:1.5em;
+    overflow: auto;
+    font-family: monospace;
+}
+.Grid3 {  /* fie Notes, fie Child */
+    grid-column: 3;
+    font-size:0.85em;
+    color: #448;
+}
+
+div.AnnLst{
+    width:22em;
+    color: #448;font-size:0.9em;
+    overflow: auto;
+}
+
+.Grid2 a { 
+    color: brown; 
+    text-decoration: none;
+    padding-left:1px; padding-right: 1px;
+}
+
+.AnnLst p {
+    margin-top: 0em;
+    margin-bottom: 0.2em;
+}
+
+.onMove:hover { 
+    background-color: #ccf; 
+}
+.onMoveSel, .onMoveSel:hover { 
+    background-color: #ccc; 
+    color: #660000; 
+}
+.nrMove {
+    font-family: Verdana;
+    font-size:0.75em;
+    color: #333;
+}
+
+.annsel {
+    color: brown;
+}
+div.Cinit {
+    color: brown;
+    margin-bottom: 1em;
+}
+div.annCrt {
+    margin-bottom: 1em;
+}
+div.annCrt p {
+    margin-left: 3em;
+    margin-bottom:0.5em;
+    font-weight:bold;
+}
+div.annCrt span[data-variant] {cursor:pointer}
+div.annCrt span[data-variant] + span {font-size:0.8em}
+/*div.annCrt p  a {*/
+/*    color:black; font-size:1.2em;*/
+/*}*/
+
+div.annCrt div { margin-bottom: 0.5em; }
+
+div.annNAG { 
+    font-style:italic; 
+    font-size:0.9em;
+}
+
+span.moveMark {
+    color:black;
+    background-color:#fff;
+}
+
+/* proprietăţi comune (pentru toate seturile -N) */
+.Board {position: relative; border: 1px solid; }
+.Field {position: absolute; padding: 1px; /* 2px; pentru N > 23 ?*/}
+
+/* proprietăţi specifice setului; */
+.Men20 {width: 176px; font-size:1em}
+.Men20 .Board {height: 176px;}
+.Men20 .Field {width: 20px; height: 20px;}
+.Men20 .Piece {width: 20px; height: 20px; background-image: url('../images/men20.png')}
+
+.Men21 {width: 184px;}
+.Men21 .Board {height: 184px;}
+.Men21 .Field {width: 21px; height: 21px; }
+.Men21 .Piece {width: 21px; height: 21px; background-image: url('../images/men21.png')}
+
+.Men22 {width: 192px;}
+.Men22 .Board {height: 192px;}
+.Men22 .Field {width: 22px; height: 22px; }
+.Men22 .Piece {width: 22px; height: 22px; background-image: url('../images/men22.png')}
+
+.Men23 {width: 200px;}
+.Men23 .Board {height: 200px;}
+.Men23 .Field {width: 23px; height: 23px; }
+.Men23 .Piece {width: 23px; height: 23px; background-image: url('../images/men23.png')}
+
+.Men24 {width: 224px; font-size:1.1em}
+.Men24 .Board {height: 224px;}
+.Men24 .Field {width: 24px; height: 24px; padding: 2px;}
+.Men24 .Piece {width: 24px; height: 24px; background-image: url('../images/men24.png')}
+
+.Men25 {width: 232px;}
+.Men25 .Board {height: 232px;}
+.Men25 .Field {width: 25px; height: 25px; padding: 2px;}
+.Men25 .Piece {width: 25px; height: 25px; background-image: url('../images/men25.png')}
+
+.Men26 {width: 240px;}
+.Men26 .Board {height: 240px;}
+.Men26 .Field {width: 26px; height: 26px; padding: 2px;}
+.Men26 .Piece {width: 26px; height: 26px; background-image: url('../images/men26.png')}
+
+.Men27 {width: 248px;}
+.Men27 .Board {height: 248px;}
+.Men27 .Field {width: 27px; height: 27px; padding: 2px;}
+.Men27 .Piece {width: 27px; height: 27px; background-image: url('../images/men27.png')}
+
+.Men28 {width: 256px; font-size:1.2em}
+.Men28 .Board {height: 256px;}
+.Men28 .Field {width: 28px; height: 28px; padding: 2px;}
+.Men28 .Piece {width: 28px; height: 28px; background-image: url('../images/men28.png')}
+
+.Men29 {width: 264px;}
+.Men29 .Board {height: 264px;}
+.Men29 .Field {width: 29px; height: 29px; padding: 2px;}
+.Men29 .Piece {width: 29px; height: 29px; background-image: url('../images/men29.png')}
+
+.Men30 {width: 272px;}
+.Men30 .Board {height: 272px;}
+.Men30 .Field {width: 30px; height: 30px; padding: 2px;}
+.Men30 .Piece {width: 30px; height: 30px; background-image: url('../images/men30.png')}
+
+.Men31 {width: 280px;}
+.Men31 .Board {height: 280px;}
+.Men31 .Field {width: 31px; height: 31px; padding: 2px;}
+.Men31 .Piece {width: 31px; height: 31px; background-image: url('../images/men31.png')}
+
+.Men32 {width: 288px;}
+.Men32 .Board {height: 288px;}
+.Men32 .Field {width: 32px; height: 32px; padding: 2px;}
+.Men32 .Piece {width: 32px; height: 32px; background-image: url('../images/men32.png')}
+
+
