@@ -7,6 +7,8 @@
  * http://jquery.org/license
  */
 
+//test
+
 //>>label: Widget
 //>>group: Core
 //>>description: Provides a factory for creating stateful widgets with a common API.
